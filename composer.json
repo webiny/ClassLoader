@@ -1,0 +1,22 @@
+{
+	"name": "webiny/class_loader",
+	"type": "library",
+	"description": "Webiny Class Loader Component",
+	"keywords": ["class loader"],
+	"homepage": "http://www.webiny.com/",
+	"licence": "MIT",
+	"authors": [
+		{
+			"name": "Webiny LTD",
+			"email": "info@webiny.com"
+		}
+	],
+	"minimum-stability": "dev",
+	"require": {
+		"php": ">=5.4.*"
+	},
+	"autoload": {
+		"psr-0": { "Webiny\\Component\\ClassLoader\\": "" }
+	},
+	"target-dir": "Webiny/Component/ClassLoader"
+}
