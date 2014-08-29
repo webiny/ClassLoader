@@ -1,22 +1,36 @@
 {
-	"name": "webiny/class_loader",
+	"name": "webiny/class-loader",
 	"type": "library",
 	"description": "Webiny Class Loader Component",
-	"keywords": ["class loader"],
+	"keywords": ["class loader", "autoloader", "psr-0", "psr-4"],
 	"homepage": "http://www.webiny.com/",
-	"licence": "MIT",
+	"license": "MIT",
 	"authors": [
 		{
-			"name": "Webiny LTD",
-			"email": "info@webiny.com"
+			"name": "Sven Al Hamad",
+			"email": "sven@webiny.com"
+		},
+		{
+			"name": "Pavel Denisjuk",
+			"email": "pavel@webiny.com"
 		}
 	],
 	"minimum-stability": "dev",
 	"require": {
-		"php": ">=5.4.*"
+		"php": ">=5.4.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "4.1.*",
+		"webiny/cache": "dev-master"
 	},
 	"autoload": {
-		"psr-0": { "Webiny\\Component\\ClassLoader\\": "" }
+		"psr-4": {
+			"Webiny\\Component\\ClassLoader\\": ""
+		}
 	},
-	"target-dir": "Webiny/Component/ClassLoader"
+	"extras": {
+		"branches": {
+			"dev-master": "~0.1"
+		}
+	}
 }
