@@ -21,13 +21,15 @@ require_once __DIR__ . '/Loaders/Psr4.php';
  */
 class ClassLoader
 {
-    static private $_instance = null;
+    /**
+     * @var null Holds the ClassLoader instance.
+     */
+    private static $_instance = null;
 
     /**
      * @var bool|CacheInterface
      */
     private $_cache = false;
-
 
     /**
      * Base constructor.
@@ -42,7 +44,7 @@ class ClassLoader
      *
      * @return $this
      */
-    static function getInstance()
+    static public function getInstance()
     {
         if (self::$_instance != null) {
             return self::$_instance;
@@ -52,18 +54,6 @@ class ClassLoader
         self::_registerAutoloader();
 
         return self::$_instance;
-    }
-
-    /**
-     * Registers SPL autoload function.
-     */
-    static private function _registerAutoloader()
-    {
-        spl_autoload_register([
-                                  self::$_instance,
-                                  'getClass'
-                              ], true, true
-        );
     }
 
     /**
@@ -133,6 +123,8 @@ class ClassLoader
 
             return true;
         }
+
+        return false;
     }
 
     /**
@@ -181,6 +173,18 @@ class ClassLoader
         }
 
         return $file;
+    }
+
+    /**
+     * Registers SPL autoload function.
+     */
+    private static function _registerAutoloader()
+    {
+        spl_autoload_register([
+                                  self::$_instance,
+                                  'getClass'
+                              ], true, true
+        );
     }
 
 }

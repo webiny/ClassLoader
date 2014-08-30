@@ -29,8 +29,8 @@
 		}
 	},
 	"extras": {
-		"branches": {
-			"dev-master": "~0.1"
+		"branch-alias": {
+			"dev-master": "~0.9"
 		}
 	}
 }

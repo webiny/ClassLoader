@@ -17,7 +17,7 @@ class Psr0 extends LoaderAbstract
     /**
      * @var LoaderAbstract Holds the loader instance.
      */
-    static protected $_instance = null;
+    protected static $_instance = null;
 
     /**
      * Register a map.
@@ -27,7 +27,7 @@ class Psr0 extends LoaderAbstract
      *
      * @return void
      */
-    function registerMap($prefix, $library)
+    public function registerMap($prefix, $library)
     {
         if ($prefix[0] == '\\') {
             $prefix = substr($prefix, 1);
@@ -53,7 +53,7 @@ class Psr0 extends LoaderAbstract
      *
      * @return string|bool Path to the class or false.
      */
-    function findClass($class)
+    public function findClass($class)
     {
         if (!$this->_maps) {
             return false;
@@ -87,5 +87,7 @@ class Psr0 extends LoaderAbstract
 
             return $file;
         }
+
+        return false;
     }
 }

@@ -10,9 +10,9 @@ namespace Webiny\Component\ClassLoader\Loaders;
 /**
  * LoaderInterface defines two methods that every loader must implement.
  *
- * @package		 Webiny\Component\ClassLoader\Loaders
+ * @package         Webiny\Component\ClassLoader\Loaders
  */
- 
+
 abstract class LoaderAbstract
 {
     /**
@@ -44,7 +44,7 @@ abstract class LoaderAbstract
     /**
      * Register a map.
      *
-     * @param string $prefix Map prefix or namespace.
+     * @param string       $prefix  Map prefix or namespace.
      * @param array|string $library Absolute path to the library or an array with path and additional options.
      *
      * @return void

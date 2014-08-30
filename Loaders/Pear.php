@@ -17,7 +17,7 @@ class Pear extends LoaderAbstract
     /**
      * @var LoaderAbstract Holds the loader instance.
      */
-    static protected $_instance = null;
+    protected static $_instance = null;
 
     /**
      * Register a map.
@@ -27,7 +27,7 @@ class Pear extends LoaderAbstract
      *
      * @return void
      */
-    function registerMap($prefix, $library)
+    public function registerMap($prefix, $library)
     {
         // check the structure of location if it contains metadata
         if (is_array($library)) {
@@ -36,8 +36,6 @@ class Pear extends LoaderAbstract
         } else {
             $path = $library;
         }
-
-        $path = $path;
 
         $this->_maps[$prefix] = $path;
     }
@@ -51,7 +49,7 @@ class Pear extends LoaderAbstract
      *
      * @return string|bool Path to the class or false.
      */
-    function findClass($class)
+    public function findClass($class)
     {
         if (!$this->_maps) {
             return false;
@@ -81,7 +79,8 @@ class Pear extends LoaderAbstract
 
             // no check if a file exists or not
             return $file;
-
         }
+
+        return false;
     }
 }
