@@ -9,10 +9,10 @@
          processIsolation="false"
          stopOnFailure="false"
          syntaxCheck="false"
-         bootstrap="../../../autoloader.php"
+         bootstrap="vendor/autoload.php"
         >
     <testsuites>
-        <testsuite name="Webiny ClassLoader Component Test Suite">
+        <testsuite name="Webiny Class Loader Component Test Suite">
             <directory>./Tests</directory>
         </testsuite>
     </testsuites>
