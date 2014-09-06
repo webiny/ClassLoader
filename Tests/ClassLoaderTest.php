@@ -34,6 +34,10 @@ class ClassLoaderTest extends \PHPUnit_Framework_TestCase
 
     public function testFindClass()
     {
+        ClassLoader::getInstance()->registerMap([
+                                                    'Webiny\Component\ClassLoader' => realpath(__DIR__ . '/../')
+                                                ]
+        );
         $class = ClassLoader::getInstance()->findClass('Webiny\Component\ClassLoader\ClassLoader');
         $this->assertSame(realpath(__DIR__ . '/../ClassLoader.php'), $class);
     }
