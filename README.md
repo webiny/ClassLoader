@@ -6,6 +6,31 @@ The following standards are supported:
 - [PSR-0](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md)
 - [PSR-4](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md)
 
+Install the component
+---------------------
+The best way to install the component is using Composer.
+
+```json
+{
+    "require": {
+        "webiny/class-loader": "dev-master"
+    }
+}
+```
+For additional versions of the package, visit the [Packagist page](https://packagist.org/packages/webiny/class-loader).
+Optionally you can add `"minimum-stability": "dev"` flag to your composer.json.
+
+Once you have your `composer.json` file in place, just run the install command.
+
+    $ php composer.phar install
+
+To learn more about Composer, and how to use it, please visit [this link](https://getcomposer.org/doc/01-basic-usage.md).
+
+Alternatively, you can also do a `git checkout` of the repo.
+
+
+## Usage
+
 To use the ClassLoader, get its instance by calling ClassLoader::getInstance() method.
 
 ```php
