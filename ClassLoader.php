@@ -145,10 +145,10 @@ class ClassLoader
         // from disk
         if ($file = $this->findClass($class)) {
             $this->_cache->save('wf.component.class_loader.' . $class, $file, 600, [
-                                                                         '_wf',
-                                                                         '_component',
-                                                                         '_class_loader'
-                                                                     ]
+                    '_wf',
+                    '_component',
+                    '_class_loader'
+                ]
             );
             require $file;
         }
